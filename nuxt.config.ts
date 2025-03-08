@@ -12,13 +12,9 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/icon",
     "@nuxthub/core",
-    "nuxt-umami",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/fontaine",
   ],
-
-  umami: {
-    domains: ["tuanductran.pages.dev"],
-    proxy: "cloak",
-  },
 
   app: {
     head: {
@@ -34,6 +30,13 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/jpg",
           href: "/favicon.jpg",
+        },
+      ],
+      script: [
+        {
+          "src": "https://cloud.umami.is/script.js",
+          "defer": true,
+          "data-website-id": "965f3c0e-5020-4994-8926-fe09d69bb199",
         },
       ],
     },
@@ -55,12 +58,15 @@ export default defineNuxtConfig({
     },
   },
 
+  googleFonts: {
+    display: "swap",
+    families: {
+      Inter: [400, 500, 600, 700, 800, 900],
+    },
+  },
+
   image: {
-    domains: [
-      "raw.githubusercontent.com",
-      "avatars.githubusercontent.com",
-      "ik.imagekit.io",
-    ],
+    domains: ["raw.githubusercontent.com", "avatars.githubusercontent.com"],
   },
 
   icon: {
