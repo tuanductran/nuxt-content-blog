@@ -1,0 +1,5 @@
+name: Download Repos
+url: https://github.com/tuanductran/download-repos
+description: This project provides a Node.js application to easily download all your starred repositories from GitHub.
+language: JavaScript
+icon: devicon:javascript

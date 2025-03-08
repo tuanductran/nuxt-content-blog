@@ -1,0 +1,5 @@
+name: HR Document
+url: https://github.com/vnodesign/hrpenci.site
+description: HR Documentation là một nền tảng chia sẻ các kiến thức và tài liệu về Front End, Back End, Linux và Design dành cho những bạn HR mới bước chân vào nghề tuyển dụng.
+language: TypeScript
+icon: devicon:typescript
