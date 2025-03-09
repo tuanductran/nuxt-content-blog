@@ -16,21 +16,19 @@ const software = items.value?.filter((item) => item.category === "software");
 </script>
 
 <template>
-  <main class="min-h-screen">
-    <AppHeader
-      class="mb-12"
-      title="Tôi đang sử dụng gì?"
-      :description="description"
-    />
-    <div class="space-y-24">
-      <ul class="space-y-8">
-        <AppUsesHeader title="Phần cứng" />
-        <AppUsesItem v-for="(item, id) in hardware" :key="id" :item="item" />
-      </ul>
-      <ul class="space-y-8">
-        <AppUsesHeader title="Phần mềm" />
-        <AppUsesItem v-for="(item, id) in software" :key="id" :item="item" />
-      </ul>
-    </div>
-  </main>
+  <AppHeader
+    class="mb-12"
+    title="Tôi đang sử dụng gì?"
+    :description="description"
+  />
+  <div class="space-y-24">
+    <ul class="space-y-8">
+      <AppUsesHeader title="Phần cứng" />
+      <AppUsesItem v-for="(item, id) in hardware" :key="id" :item="item" />
+    </ul>
+    <ul class="space-y-8">
+      <AppUsesHeader title="Phần mềm" />
+      <AppUsesItem v-for="(item, id) in software" :key="id" :item="item" />
+    </ul>
+  </div>
 </template>
