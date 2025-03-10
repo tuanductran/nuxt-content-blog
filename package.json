@@ -41,7 +41,7 @@
     "nuxt": "^3.15.4",
     "typescript": "^5.7.3",
     "vue-tsc": "^2.2.8",
-    "wrangler": "^3.111.0"
+    "wrangler": "^3.112.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
