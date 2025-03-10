@@ -21,6 +21,17 @@ export default defineContentConfig({
         url: z.string(),
       }),
     }),
+    notes: defineCollection({
+      type: "page",
+      source: "notes/*.md",
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        published: z.date(),
+        slug: z.string(),
+        cover: z.string(),
+      }),
+    }),
     pages: defineCollection({
       type: "page",
       source: "pages/*.md",

@@ -29,7 +29,7 @@ If you are unable to set up NextDNS using our apps, DNS-over-TLS, DNS-over-HTTPS
   1. Navigate to Settings > Wi-Fi to reach the proxy configuration on your iPhone.
   2. Select the name of the Wi-Fi network you're currently connected to.
   3. Scroll down, and you'll find the "Configure Proxy" option at the bottom of the display.
-  4. Choose "Auto" and enter an address formatted like this: https://link-ip.nextdns.io/xxxxxx/9541288ae9febb35.
+  4. Choose "Auto" and enter an address formatted like this: [https://link-ip.nextdns.io/xxxxxx/9541288ae9febb35](https://link-ip.nextdns.io/xxxxxx/9541288ae9febb35).
 
 ## Setup Guide
 
@@ -267,7 +267,7 @@ Fine tune your Logs settings.
 
 - [x] Enable Logs
 
-**Privacy adjustments**
+Privacy adjustments:
 
 - [x] Log clients IPs
 - [x] Log domains
@@ -287,19 +287,19 @@ Display a block page when a domain is being blocked. This may slightly increase 
 
 Speed up your browsing.
 
-**Anonymized EDNS Client Subnet**
+Anonymized EDNS Client Subnet:
 
 Speed up the delivery of data from content delivery networks without exposing your IP address.
 
 - [x] Enable Anonymized EDNS Client Subnet
 
-**Cache Boost**
+Cache Boost:
 
 Minimize DNS queries by enforcing a minimum TTL (Time to live).
 
 - [x] Enable Cache Boost
 
-**CNAME Flattening**
+CNAME Flattening:
 
 Prevent CNAME-chasing resolvers from making unnecessary queries and pollute the logs with intermediate domains.
 

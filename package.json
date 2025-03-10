@@ -10,6 +10,8 @@
     "postinstall": "nuxi prepare || husky",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "lint:md": "markdownlint 'content/**/*.md' && case-police 'content/**/*.md'",
+    "lint:md:fix": "markdownlint --fix 'content/**/*.md' && case-police 'content/**/*.md' --fix",
     "typecheck": "nuxi typecheck"
   },
   "dependencies": {
@@ -35,6 +37,7 @@
     "eslint-plugin-command": "^3.1.0",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
+    "markdownlint-cli": "^0.44.0",
     "nuxt": "^3.15.4",
     "typescript": "^5.7.3",
     "vue-tsc": "^2.2.8",
