@@ -92,7 +92,7 @@ export default defineNuxtConfig({
     cloudflare: {
       pages: {
         routes: {
-          exclude: ['/books/*']
+          exclude: ['/books/*', '/notes/*']
         }
       }
     }
