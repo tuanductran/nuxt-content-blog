@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxt/icon',
-    '@nuxthub/core',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
     '@nuxt/eslint'
@@ -76,25 +75,7 @@ export default defineNuxtConfig({
     }
   },
 
-  hub: {
-    cache: true
-  },
-
   typescript: {
     typeCheck: true
   },
-
-  nitro: {
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true
-    },
-    cloudflare: {
-      pages: {
-        routes: {
-          exclude: ['/books/*', '/notes/*']
-        }
-      }
-    }
-  }
 })
