@@ -37,8 +37,8 @@ importers:
         specifier: ^19.8.0
         version: 19.8.0
       '@iconify-json/devicon':
-        specifier: ^1.2.18
-        version: 1.2.18
+        specifier: ^1.2.19
+        version: 1.2.19
       '@iconify-json/solar':
         specifier: ^1.2.2
         version: 1.2.2
@@ -983,8 +983,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/devicon@1.2.18':
-    resolution: {integrity: sha512-A2SDG3BOGOlMrz1zGKoWmM9R17tIUNlWA/JO3YKiIFGd3ysvhXaVBj+Tr12ts0y3e/vTgVW/QkrAFqct9bqC9A==}
+  '@iconify-json/devicon@1.2.19':
+    resolution: {integrity: sha512-OnVa/bfWB5K2ZeK/fD6VMwuP4PgfHX4jDFoXmHkBBJr13NmaFSpKcMdEXGpvl9u68u4HiMb3A/9PU4hDW6QXvA==}
 
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
@@ -2642,6 +2642,9 @@ packages:
 
   decode-named-character-reference@1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
+
+  decode-named-character-reference@1.1.0:
+    resolution: {integrity: sha512-Wy+JTSbFThEOXQIR2L6mxJvEs+veIzpmqD7ynWxMXGpnk3smkHQOp6forLdHsKpAMW9iJpaBBIxz285t1n1C3w==}
 
   decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
@@ -6965,7 +6968,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@iconify-json/devicon@1.2.18':
+  '@iconify-json/devicon@1.2.19':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -9165,6 +9168,10 @@ snapshots:
     dependencies:
       character-entities: 2.0.2
 
+  decode-named-character-reference@1.1.0:
+    dependencies:
+      character-entities: 2.0.2
+
   decompress-response@6.0.0:
     dependencies:
       mimic-response: 3.1.0
@@ -10820,7 +10827,7 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
       '@types/unist': 3.0.3
-      decode-named-character-reference: 1.0.2
+      decode-named-character-reference: 1.1.0
       devlop: 1.1.0
       mdast-util-to-string: 4.0.0
       micromark: 4.0.2
@@ -11121,7 +11128,7 @@ snapshots:
 
   micromark-util-decode-string@2.0.1:
     dependencies:
-      decode-named-character-reference: 1.0.2
+      decode-named-character-reference: 1.1.0
       micromark-util-character: 2.1.1
       micromark-util-decode-numeric-character-reference: 2.0.2
       micromark-util-symbol: 2.0.1
@@ -11768,7 +11775,7 @@ snapshots:
       '@types/unist': 2.0.11
       character-entities-legacy: 3.0.0
       character-reference-invalid: 2.0.1
-      decode-named-character-reference: 1.0.2
+      decode-named-character-reference: 1.1.0
       is-alphanumerical: 2.0.1
       is-decimal: 2.0.1
       is-hexadecimal: 2.0.1
