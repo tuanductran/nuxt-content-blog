@@ -1,16 +1,16 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 
 const { data: articles } = await useAsyncData(route.path, async () => {
-  return await queryCollection("articles").path(route.path).first();
-});
+  return await queryCollection('articles').path(route.path).first()
+})
 
 if (!articles.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: "Page not found",
-    fatal: true,
-  });
+    statusMessage: 'Page not found',
+    fatal: true
+  })
 }
 
 useSeoMeta({
@@ -18,14 +18,14 @@ useSeoMeta({
   description: articles.value?.description,
   ogTitle: articles.value?.title,
   ogDescription: articles.value?.description,
-  ogImage: articles.value?.cover || "/favicon.jpg",
-  twitterCard: "summary_large_image",
-});
+  ogImage: articles.value?.cover || '/favicon.jpg',
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <template>
   <div
-    class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
+    class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:rounded-lg prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10"
   >
     <article>
       <h1>{{ articles?.title }}</h1>

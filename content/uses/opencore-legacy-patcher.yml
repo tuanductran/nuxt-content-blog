@@ -1,4 +1,7 @@
 name: OpenCore Legacy Patcher
-description: A powerful tool that enables macOS updates on unsupported Macs by bypassing hardware restrictions, utilizing OpenCore bootloader for enhanced compatibility.
+description:
+  A powerful tool that enables macOS updates on unsupported Macs by bypassing
+  hardware restrictions, utilizing OpenCore bootloader for enhanced
+  compatibility.
 url: https://dortania.github.io/OpenCore-Legacy-Patcher/
 category: software

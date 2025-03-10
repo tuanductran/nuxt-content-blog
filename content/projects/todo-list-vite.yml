@@ -1,5 +1,7 @@
 name: Todo List React
 url: https://github.com/tuanductran/todo-list-react
-description: A user-friendly and responsive Todo List web application developed using React and Vite.
+description:
+  A user-friendly and responsive Todo List web application developed using React
+  and Vite.
 language: TypeScript
 icon: devicon:typescript

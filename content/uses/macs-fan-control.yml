@@ -1,4 +1,7 @@
 name: Macs Fan Control
-description: A utility that allows users to monitor and manually control Mac's fan speed, helping to optimize cooling and reduce noise for better performance and longevity.
+description:
+  A utility that allows users to monitor and manually control Mac's fan speed,
+  helping to optimize cooling and reduce noise for better performance and
+  longevity.
 url: https://crystalidea.com/macs-fan-control
 category: software

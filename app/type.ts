@@ -9,7 +9,7 @@ export interface NotionPage {
 }
 
 /*
- * Type definitions for Github User
+ * Type definitions for GitHub User
  */
 export interface GitHubUser {
   avatar_url: string

@@ -1,4 +1,7 @@
 name: Zed
-description: A high-performance, collaborative code editor designed for speed and efficiency, featuring AI-assisted coding, real-time collaboration, and a minimalist interface for a distraction-free workflow.
+description:
+  A high-performance, collaborative code editor designed for speed and
+  efficiency, featuring AI-assisted coding, real-time collaboration, and a
+  minimalist interface for a distraction-free workflow.
 url: https://zed.dev/
 category: software

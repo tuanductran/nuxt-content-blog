@@ -2,9 +2,9 @@
 defineProps({
   item: {
     type: Object,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 
 <template>
@@ -17,11 +17,13 @@ defineProps({
       external
     >
       <p
-        class="text-base font-semibold text-gray-700 dark:text-gray-300 group-hover:text-primary-600"
+        class="group-hover:text-primary-600 text-base font-semibold text-gray-700 dark:text-gray-300"
       >
         {{ item.name }}
       </p>
-      <p class="text-sm text-gray-500">{{ item.description }}</p>
+      <p class="text-sm text-gray-500">
+        {{ item.description }}
+      </p>
     </NuxtLink>
   </li>
 </template>

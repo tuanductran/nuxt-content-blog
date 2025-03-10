@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { GitHubUser } from "~/type";
+import type { GitHubUser } from '~/type'
 
-const { data: user } = await useAsyncData("githubUser", () =>
-  $fetch<GitHubUser>("https://api.github.com/users/tuanductran"));
+const { data: user } = await useAsyncData('githubUser', () =>
+  $fetch<GitHubUser>('https://api.github.com/users/tuanductran')
+)
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const { data: user } = await useAsyncData("githubUser", () =>
     <NuxtImg
       :src="user?.avatar_url"
       :alt="user?.name"
-      class="rounded-full size-12 sm:size-16"
+      class="size-12 rounded-full sm:size-16"
       sizes="48px sm:64px"
       placeholder
       format="webp"

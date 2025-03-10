@@ -1,19 +1,64 @@
-# Default state for all rules
+# Enable all rules by default
 default: true
-# Disable max line length
-MD013: false
-# Allow duplicated heading for different sections
-MD024:
-  allow_different_nesting: true
-  siblings_only: true
-# Allow multiple top-level headings
-MD025: false
-# Allow inline HTML
-MD033: false
-# Allow non blank lines around list
-MD032: false
-MD046:
-  style: fenced
-MD034: false
-MD031: false
-MD007: false
+
+# Disable line length limit
+MD013: false # Allows long lines without warnings
+
+# Require blank lines before and after headings
+MD022: true # Prevents headings from sticking to adjacent content
+
+# Require headings to start at the beginning of a line
+MD023: true # Avoids unnecessary whitespace before headings
+
+# Allow multiple top-level headings in a file
+MD025: false # Useful for documents with multiple sections
+
+# Require blank lines before lists
+MD032: true # Improves readability
+
+# Allow duplicate headings in different sections
+MD024: false # Prevents errors when similar headings are used
+
+# Require blank lines before tables
+MD035: true # Ensures proper spacing around tables
+
+# Allow multiple consecutive emphasis markers (*) or (_)
+MD036: false # Does not enforce strict syntax for emphasis
+
+# Ensure consistent list marker usage
+MD004:
+  style: consistent # Uses the same bullet point style (- or *)
+
+# Require proper indentation for lists
+MD005: true # Prevents misaligned list items
+
+# Define indentation spacing for nested lists
+MD007:
+  indent: 2 # Nested lists should be indented by 2 spaces
+
+# Allow multiple consecutive blank lines
+MD012: false # Does not flag excessive blank lines
+
+# Allow control characters in text
+MD014: false # Avoids warnings for special characters
+
+# Require valid links
+MD034: true # Detects broken links
+
+# Enforce punctuation in headings
+MD045: true # Ensures headings include punctuation if needed
+
+# Require fenced code blocks (```) instead of indented code
+MD046: true # Prevents issues when copying and pasting code
+
+# Do not enforce strict content formatting
+MD043: false # Allows more flexibility in content structure
+
+# Do not require spellchecking against a dictionary
+MD044: false # Avoids unnecessary warnings for special words
+
+# Ensure proper blockquote syntax
+MD040: true # Maintains correct blockquote formatting
+
+# Do not require ordered lists (1, 2, 3...) to be sequential
+MD047: false # Allows non-sequential numbering in lists if needed

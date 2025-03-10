@@ -1,4 +1,7 @@
 name: Raycast
-description: A powerful productivity tool for Mac that enhances workflow with quick search, app launching, and custom extensions, providing a faster and more efficient alternative to Spotlight.
+description:
+  A powerful productivity tool for Mac that enhances workflow with quick search,
+  app launching, and custom extensions, providing a faster and more efficient
+  alternative to Spotlight.
 url: https://raycast.com/
 category: software

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 
 const { data: notes } = await useAsyncData(route.path, async () => {
-  return await queryCollection("notes").path(route.path).first();
-});
+  return await queryCollection('notes').path(route.path).first()
+})
 
 if (!notes.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: "Page not found",
-    fatal: true,
-  });
+    statusMessage: 'Page not found',
+    fatal: true
+  })
 }
 
 useSeoMeta({
@@ -18,14 +18,14 @@ useSeoMeta({
   description: notes.value?.description,
   ogTitle: notes.value?.title,
   ogDescription: notes.value?.description,
-  ogImage: notes.value?.cover || "/favicon.jpg",
-  twitterCard: "summary_large_image",
-});
+  ogImage: notes.value?.cover || '/favicon.jpg',
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <template>
   <div
-    class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
+    class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:rounded-lg prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10"
   >
     <article>
       <h1>{{ notes?.title }}</h1>
