@@ -12,7 +12,7 @@ importers:
         specifier: ^1.9.0
         version: 1.9.0(db0@0.3.1(better-sqlite3@11.8.1))(ioredis@5.6.0)(magicast@0.3.5)
       '@nuxt/ui':
-        specifier: ^2.21.0
+        specifier: ^2.21.1
         version: 2.21.1(change-case@5.4.4)(magicast@0.3.5)(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       '@vueuse/core':
         specifier: ^13.0.0
@@ -28,16 +28,16 @@ importers:
         specifier: ^19.8.0
         version: 19.8.0
       '@iconify-json/devicon':
-        specifier: ^1.2.18
+        specifier: ^1.2.19
         version: 1.2.19
       '@iconify-json/solar':
         specifier: ^1.2.2
         version: 1.2.2
       '@nuxt/content':
-        specifier: ^3.2.2
+        specifier: ^3.3.0
         version: 3.3.0(magicast@0.3.5)(typescript@5.8.2)
       '@nuxt/devtools':
-        specifier: ^2.1.1
+        specifier: ^2.2.1
         version: 2.2.1(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       '@nuxt/eslint':
         specifier: ^1.2.0
@@ -58,7 +58,7 @@ importers:
         specifier: ^9.1.2
         version: 9.1.2
       eslint:
-        specifier: ^9.21.0
+        specifier: ^9.22.0
         version: 9.22.0(jiti@2.4.2)
       eslint-plugin-tailwindcss:
         specifier: ^3.18.0
@@ -85,13 +85,13 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier@3.5.3)
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.8.2
         version: 5.8.2
       vue-tsc:
         specifier: ^2.2.8
         version: 2.2.8(typescript@5.8.2)
       wrangler:
-        specifier: ^3.111.0
+        specifier: ^3.112.0
         version: 3.112.0(@cloudflare/workers-types@4.20250310.0)
 
 packages:
