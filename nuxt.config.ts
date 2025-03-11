@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxt/icon',
-    '@nuxthub/core',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
     '@nuxt/eslint'
@@ -74,10 +73,6 @@ export default defineNuxtConfig({
     clientBundle: {
       scan: true
     }
-  },
-
-  hub: {
-    cache: true
   },
 
   typescript: {
