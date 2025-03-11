@@ -2,10 +2,6 @@
 import type { NotionPage } from '~/type'
 import { getThumbnail } from '~/utils/getThumbnail'
 
-const { data: books } = await useAsyncData('books', () =>
-  $fetch<NotionPage[]>('https://api-mybooks.tuanductran-dev-f18.workers.dev')
-)
-
 const description =
   'Khám phá bộ sưu tập sách được tuyển chọn kỹ lưỡng, giúp bạn mở rộng tri thức và tìm cảm hứng cho những trang sách tiếp theo. Từ những tác phẩm kinh điển đến hiện đại, hãy tìm cho mình một cuốn sách yêu thích.'
 useSeoMeta({
@@ -16,6 +12,49 @@ useSeoMeta({
   ogImage: '/favicon.jpg',
   twitterCard: 'summary_large_image'
 })
+
+const pageSize = ref(10)
+const startCursor = ref<string | null>(null)
+const books = ref<NotionPage[]>([])
+const hasMore = ref(true)
+const isLoading = ref(false)
+
+const toast = useToast()
+
+const fetchBooks = async () => {
+  if (isLoading.value || !hasMore.value) return
+
+  isLoading.value = true
+
+  try {
+    const data = await $fetch<{
+      results: NotionPage[]
+      has_more: boolean
+      next_cursor: string | null
+    }>('https://api-mybooks.tuanductran-dev-f18.workers.dev', {
+      params: {
+        page_size: pageSize.value,
+        start_cursor: startCursor.value || undefined
+      }
+    })
+
+    if (data?.results) {
+      books.value.push(...data.results)
+      startCursor.value = data.next_cursor
+      hasMore.value = data.has_more
+    } else {
+      hasMore.value = false
+    }
+  } catch (error) {
+    console.error(error)
+    toast.add({ title: 'Error loading data', color: 'red' })
+    hasMore.value = false
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(fetchBooks)
 </script>
 
 <template>
@@ -41,5 +80,14 @@ useSeoMeta({
         </NuxtLink>
       </li>
     </ul>
+    <div v-if="hasMore" class="mt-6 flex items-center justify-center text-sm">
+      <UButton
+        label="Load more"
+        variant="outline"
+        color="primary"
+        :loading="isLoading"
+        @click="fetchBooks"
+      />
+    </div>
   </div>
 </template>
