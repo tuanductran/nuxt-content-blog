@@ -21,8 +21,8 @@
   "dependencies": {
     "@nuxt/image": "^1.9.0",
     "@nuxt/ui": "^2.21.0",
-    "@vueuse/core": "^12.7.0",
-    "@vueuse/nuxt": "^12.7.0"
+    "@vueuse/core": "^13.0.0",
+    "@vueuse/nuxt": "^13.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
