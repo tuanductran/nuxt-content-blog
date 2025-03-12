@@ -21,7 +21,7 @@ export default cachedEventHandler(
       console.error('Error fetching notes:', error)
       throw createError({
         statusCode: 500,
-        statusMessage: 'Failed to fetch books'
+        statusMessage: 'Failed to fetch notes'
       })
     }
   }),
