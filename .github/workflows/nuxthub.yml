@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Rebuild better-sqlite3
+        run: bun run rebuild better-sqlite3
+
       - name: Ensure NuxtHub module is installed
         run: bunx nuxthub@latest ensure
 
