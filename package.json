@@ -12,7 +12,7 @@
   "author": "Tuan Duc Tran <tuanductran.dev@gmail.com>",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.6.2",
   "keywords": [
     "nuxt",
     "content",
@@ -52,7 +52,7 @@
     "@nuxt/content": "^3.3.0",
     "@nuxt/devtools": "^2.2.1",
     "@nuxt/eslint": "^1.2.0",
-    "@nuxt/icon": "^1.10.3",
+    "@nuxt/icon": "^1.11.0",
     "@nuxthub/core": "0.8.18",
     "@nuxtjs/fontaine": "^0.5.0",
     "@nuxtjs/google-fonts": "^3.2.0",
@@ -69,7 +69,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "^5.8.2",
     "vue-tsc": "^2.2.8",
-    "wrangler": "^3.112.0"
+    "wrangler": "^3.114.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
