@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     '@nuxthub/core'
   ],
 
+  hub: {
+    cache: true
+  },
+
   app: {
     head: {
       htmlAttrs: {

@@ -27,16 +27,16 @@ const fetchBooks = async () => {
   isLoading.value = true
 
   try {
-    const data = await $fetch<{
+    const data = await useFetch<{
       results: NotionPage[]
       has_more: boolean
       next_cursor: string | null
-    }>('https://api-mybooks.tuanductran-dev-f18.workers.dev', {
-      params: {
+    }>('/api/books', {
+      query: {
         page_size: pageSize.value,
         start_cursor: startCursor.value || undefined
       }
-    })
+    }).then(res => res.data.value)
 
     if (data?.results) {
       books.value.push(...data.results)

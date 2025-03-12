@@ -9,7 +9,8 @@ const items = [
   },
   { name: 'Bookmarks', path: '/bookmarks', icon: 'solar:bookmark-linear' },
   { name: 'Books', path: '/books', icon: 'solar:book-minimalistic-outline' },
-  { name: 'Uses', path: '/uses', icon: 'solar:backpack-outline' }
+  { name: 'Uses', path: '/uses', icon: 'solar:backpack-outline' },
+  { name: 'Notes', path: '/notes', icon: 'solar:document-outline' }
 ]
 </script>
 
