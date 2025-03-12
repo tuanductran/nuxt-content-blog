@@ -1,1 +1,1 @@
-bun commitlint --edit
+pnpm commitlint --edit
