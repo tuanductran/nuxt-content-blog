@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    '@nuxthub/core'
   ],
 
   app: {
@@ -77,5 +78,14 @@ export default defineNuxtConfig({
 
   typescript: {
     typeCheck: true
+  },
+
+  nitro: {
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
+    }
   }
 })
