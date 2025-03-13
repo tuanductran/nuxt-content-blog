@@ -19,13 +19,11 @@ defineProps({
       <h3 class="group-hover:text-primary-600 text-sm font-medium">
         {{ project.name }}
       </h3>
-      <p class="text-sm text-gray-400">
+      <p class="text-sm text-neutral-400">
         {{ project.description }}
       </p>
     </div>
-    <div
-      class="flex-1 border-b border-dashed border-gray-300 group-hover:border-gray-700 dark:border-gray-800"
-    />
+    <div class="flex-1" />
     <Icon :name="project.icon" class="size-8" />
   </NuxtLink>
 </template>

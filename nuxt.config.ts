@@ -11,11 +11,11 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxt/icon',
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/fontaine',
     '@nuxt/eslint',
     '@nuxthub/core'
   ],
+
+  css: ['~/assets/css/app.css'],
 
   hub: {
     cache: true
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         class: 'h-full'
       },
       bodyAttrs: {
-        class: 'antialiased bg-gray-50 dark:bg-black min-h-screen'
+        class: 'bg-neutral-50 dark:bg-black min-h-screen'
       },
       link: [
         {
@@ -63,13 +63,6 @@ export default defineNuxtConfig({
     }
   },
 
-  googleFonts: {
-    display: 'swap',
-    families: {
-      Inter: [400, 500, 600, 700, 800, 900]
-    }
-  },
-
   image: {
     domains: ['raw.githubusercontent.com', 'avatars.githubusercontent.com']
   },
@@ -81,7 +74,7 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    typeCheck: true
+    strict: false
   },
 
   nitro: {

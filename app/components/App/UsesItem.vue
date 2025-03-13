@@ -17,11 +17,11 @@ defineProps({
       external
     >
       <p
-        class="group-hover:text-primary-600 text-base font-semibold text-gray-700 dark:text-gray-300"
+        class="group-hover:text-primary-600 text-base font-semibold text-neutral-700 dark:text-neutral-300"
       >
         {{ item.name }}
       </p>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-neutral-500">
         {{ item.description }}
       </p>
     </NuxtLink>

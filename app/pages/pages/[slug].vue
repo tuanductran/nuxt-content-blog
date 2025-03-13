@@ -24,19 +24,17 @@ useSeoMeta({
 </script>
 
 <template>
-  <div
-    class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:rounded-lg prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10"
+  <article
+    class="prose prose-neutral dark:prose-invert prose-blockquote:not-italic prose-pre:bg-neutral-900 prose-img:rounded-lg prose-img:ring-1 prose-img:ring-neutral-200 dark:prose-img:ring-white/10 max-w-full"
   >
-    <article>
-      <h1>{{ pages?.title }}</h1>
-      <ContentRenderer v-if="pages" :value="pages" />
-    </article>
-  </div>
+    <h1>{{ pages?.title }}</h1>
+    <ContentRenderer v-if="pages" :value="pages" />
+  </article>
 </template>
 
 <style>
-.prose h2 a,
-.prose h3 a {
+.article h2 a,
+.article h3 a {
   @apply no-underline;
 }
 </style>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { categorizeItems } from '~/utils/categorizeItems'
+
 const description =
   'Các phần mềm tôi sử dụng, những thiết bị yêu thích và các công cụ tôi khuyên dùng. Đây là danh sách tổng hợp những món đồ mà tôi yêu thích nhất.'
 useSeoMeta({
@@ -12,8 +14,8 @@ useSeoMeta({
 const { data: items } = await useAsyncData('uses', () =>
   queryCollection('uses').order('name', 'ASC').all()
 )
-const hardware = items.value?.filter(item => item.category === 'hardware')
-const software = items.value?.filter(item => item.category === 'software')
+
+const category = categorizeItems(items.value)
 </script>
 
 <template>
@@ -23,14 +25,38 @@ const software = items.value?.filter(item => item.category === 'software')
       title="Tôi đang sử dụng gì?"
       :description="description"
     />
-    <div class="space-y-24">
-      <ul class="space-y-8">
-        <AppUsesHeader title="Phần cứng" />
-        <AppUsesItem v-for="(item, id) in hardware" :key="id" :item="item" />
+    <div class="flex flex-col gap-16">
+      <ul class="flex flex-col gap-4">
+        <AppUsesHeader title="Ứng dụng" />
+        <AppUsesItem
+          v-for="(item, id) in category.applications"
+          :key="id"
+          :item="item"
+        />
       </ul>
-      <ul class="space-y-8">
+      <ul class="flex flex-col gap-4">
+        <AppUsesHeader title="Phần cứng" />
+        <AppUsesItem
+          v-for="(item, id) in category.hardware"
+          :key="id"
+          :item="item"
+        />
+      </ul>
+      <ul class="flex flex-col gap-4">
         <AppUsesHeader title="Phần mềm" />
-        <AppUsesItem v-for="(item, id) in software" :key="id" :item="item" />
+        <AppUsesItem
+          v-for="(item, id) in category.software"
+          :key="id"
+          :item="item"
+        />
+      </ul>
+      <ul class="flex flex-col gap-4">
+        <AppUsesHeader title="Dịch vụ" />
+        <AppUsesItem
+          v-for="(item, id) in category.services"
+          :key="id"
+          :item="item"
+        />
       </ul>
     </div>
   </div>

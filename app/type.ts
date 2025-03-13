@@ -16,3 +16,11 @@ export interface GitHubUser {
   name: string
   bio: string
 }
+
+/*
+ * Type definitions for Uses
+ */
+export interface Item {
+  name: string
+  category: string
+}

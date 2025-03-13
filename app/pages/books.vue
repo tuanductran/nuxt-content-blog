@@ -47,7 +47,7 @@ const fetchBooks = async () => {
     }
   } catch (error) {
     console.error(error)
-    toast.add({ title: 'Error loading data', color: 'red' })
+    toast.add({ title: 'Error loading data', color: 'error' })
     hasMore.value = false
   } finally {
     isLoading.value = false
@@ -60,21 +60,21 @@ onMounted(fetchBooks)
 <template>
   <div>
     <AppHeader class="mb-8" title="Books" :description="description" />
-    <ul class="space-y-2">
+    <ul class="flex flex-col gap-2">
       <li v-for="book in books" :key="book.id">
         <NuxtLink
           :to="book.public_url"
           :title="book.title"
           target="_blank"
           external
-          class="-m-2 flex min-w-0 items-center gap-3 rounded-lg p-2 text-sm hover:bg-gray-100 dark:hover:bg-white/10"
+          class="-m-2 flex min-w-0 items-center gap-3 rounded-lg p-2 text-sm hover:bg-neutral-100 dark:hover:bg-white/10"
         >
           <UAvatar
             :src="getThumbnail(book.public_url)"
             :alt="book.title"
-            :ui="{ rounded: 'rounded-md' }"
+            class="rounded-md"
           />
-          <p class="truncate text-gray-700 dark:text-gray-200">
+          <p class="truncate text-neutral-700 dark:text-neutral-200">
             {{ book.title }}
           </p>
         </NuxtLink>

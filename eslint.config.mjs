@@ -1,4 +1,4 @@
-import tailwind from 'eslint-plugin-tailwindcss'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt({
@@ -7,14 +7,4 @@ export default withNuxt({
     'node/prefer-global/process': 'off',
     'node/prefer-global/buffer': 'off'
   }
-})
-  .append(tailwind.configs['flat/recommended'])
-  .append({
-    rules: {
-      'tailwindcss/classnames-order': 'off', // conflicts with prettier-plugin-tailwindcss packages
-      'tailwindcss/enforces-negative-arbitrary-values': 'error',
-      'tailwindcss/enforces-shorthand': 'error',
-      'tailwindcss/migration-from-tailwind-2': 'error',
-      'tailwindcss/no-custom-classname': 'off' // conflicts with @nuxt/ui packages
-    }
-  })
+}).append(eslintConfigPrettier)

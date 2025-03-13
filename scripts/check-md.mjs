@@ -1,5 +1,5 @@
 import { exec, execSync } from 'child_process'
-import { readFileSync, watchFile, unwatchFile } from 'fs'
+import { readFileSync, unwatchFile, watchFile } from 'fs'
 import { join, resolve } from 'path'
 import { createInterface } from 'readline'
 import { sync } from 'glob'

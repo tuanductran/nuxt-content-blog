@@ -18,7 +18,7 @@ const { data: projects } = await useAsyncData('projects-all', () =>
 <template>
   <div>
     <AppHeader class="mb-12" title="Projects" :description="description" />
-    <div class="space-y-4">
+    <div class="flex flex-col gap-4">
       <AppProjectCard
         v-for="(project, id) in projects"
         :key="id"

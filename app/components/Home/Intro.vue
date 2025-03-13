@@ -7,7 +7,7 @@ const { data: user } = await useAsyncData('githubUser', () =>
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="flex flex-col gap-6">
     <NuxtImg
       :src="user?.avatar_url"
       :alt="user?.name"
@@ -17,11 +17,11 @@ const { data: user } = await useAsyncData('githubUser', () =>
       format="webp"
     />
     <h1
-      class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100"
+      class="text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100"
     >
       {{ user?.name }}!
     </h1>
-    <p class="text-gray-900 dark:text-gray-400">
+    <p class="text-neutral-900 dark:text-neutral-400">
       {{ user?.bio }}
     </p>
   </div>
