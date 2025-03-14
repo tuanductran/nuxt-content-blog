@@ -4,6 +4,7 @@ import { getThumbnail } from '~/utils/getThumbnail'
 
 const description =
   'Tổng hợp tất cả ghi chú của tôi về phát triển bản thân, kỹ năng sống, và nhiều chủ đề khác, sắp xếp theo thứ tự thời gian.'
+
 useSeoMeta({
   title: 'Notes | Tuan Duc Tran',
   description,
@@ -15,8 +16,25 @@ useSeoMeta({
 
 const pageSize = ref(10)
 const startCursor = ref<string | null>(null)
-const notes = ref<NotionPage[]>([])
-const hasMore = ref(true)
+
+const { data, pending, error } = await useAsyncData('notes', async () => {
+  const response = await $fetch<{
+    results: NotionPage[]
+    has_more: boolean
+    next_cursor: string | null
+  }>('/api/notes', {
+    query: {
+      page_size: pageSize.value,
+      start_cursor: startCursor.value || undefined
+    }
+  })
+
+  return response
+})
+
+const notes = ref(data.value?.results || [])
+const hasMore = ref(data.value?.has_more || false)
+const startCursor = ref(data.value?.next_cursor || null)
 const isLoading = ref(false)
 
 const toast = useToast()
@@ -27,7 +45,7 @@ const fetchNotes = async () => {
   isLoading.value = true
 
   try {
-    const data = await useFetch<{
+    const response = await $fetch<{
       results: NotionPage[]
       has_more: boolean
       next_cursor: string | null
@@ -36,12 +54,12 @@ const fetchNotes = async () => {
         page_size: pageSize.value,
         start_cursor: startCursor.value || undefined
       }
-    }).then(res => res.data.value)
+    })
 
-    if (data?.results) {
-      notes.value.push(...data.results)
-      startCursor.value = data.next_cursor
-      hasMore.value = data.has_more
+    if (response?.results) {
+      notes.value.push(...response.results)
+      startCursor.value = response.next_cursor
+      hasMore.value = response.has_more
     } else {
       hasMore.value = false
     }
@@ -53,14 +71,16 @@ const fetchNotes = async () => {
     isLoading.value = false
   }
 }
-
-onMounted(fetchNotes)
 </script>
 
 <template>
   <div>
     <AppHeader class="mb-8" title="Notes" :description="description" />
-    <ul class="flex flex-col gap-4">
+    <div v-if="pending" class="text-center">Loading notes...</div>
+    <div v-else-if="error" class="text-center">
+      Error loading notes
+    </div>
+    <ul v-else class="flex flex-col gap-4">
       <li v-for="note in notes" :key="note.id">
         <NuxtLink
           :to="note.public_url"
