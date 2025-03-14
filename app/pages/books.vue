@@ -60,7 +60,7 @@ onMounted(fetchBooks)
 <template>
   <div>
     <AppHeader class="mb-8" title="Books" :description="description" />
-    <ul class="flex flex-col gap-2">
+    <ul class="flex flex-col gap-4">
       <li v-for="book in books" :key="book.id">
         <NuxtLink
           :to="book.public_url"

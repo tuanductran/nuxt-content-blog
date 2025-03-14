@@ -60,7 +60,7 @@ onMounted(fetchNotes)
 <template>
   <div>
     <AppHeader class="mb-8" title="Notes" :description="description" />
-    <ul class="flex flex-col gap-2">
+    <ul class="flex flex-col gap-4">
       <li v-for="note in notes" :key="note.id">
         <NuxtLink
           :to="note.public_url"

@@ -20,7 +20,7 @@ const { data: bookmarks } = await useAsyncData('bookmarks', () =>
 <template>
   <div>
     <AppHeader class="mb-8" title="Bookmarks" :description="description" />
-    <ul class="flex flex-col gap-2">
+    <ul class="flex flex-col gap-4">
       <li v-for="bookmark in bookmarks" :key="bookmark.url">
         <NuxtLink
           :to="bookmark.url"
