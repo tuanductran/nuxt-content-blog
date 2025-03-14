@@ -20,10 +20,10 @@ const { data: articles } = await useAsyncData('all-articles', () =>
 
 <template>
   <div>
-    <AppHeader class="mb-16" title="Articles" :description="description" />
+    <Header class="mb-16" title="Articles" :description="description" />
     <ul class="flex flex-col gap-8">
       <li v-for="(article, id) in articles" :key="id">
-        <AppArticleCard :article="article" />
+        <ArticleCard :article="article" />
       </li>
     </ul>
   </div>

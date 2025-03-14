@@ -14,9 +14,9 @@ useSeoMeta({
 
 <template>
   <div class="flex flex-col gap-12">
-    <HomeIntro />
+    <HomeHero />
     <HomeSocialLinks />
-    <HomeFeaturedProjects />
-    <HomeFeaturedArticles />
+    <HomeRecentProjects />
+    <HomeRecentArticles />
   </div>
 </template>

@@ -17,18 +17,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/app.css'],
 
-  hub: {
-    cache: true
-  },
-
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en',
-        class: 'h-full'
-      },
-      bodyAttrs: {
-        class: 'bg-neutral-50 dark:bg-black min-h-screen'
+        lang: 'en'
       },
       link: [
         {
@@ -77,12 +69,19 @@ export default defineNuxtConfig({
     strict: false
   },
 
+  routeRules: {
+    // Pre-render
+    '/': { prerender: true },
+    '/api/books.json': { prerender: true },
+    '/api/github.json': { prerender: true }
+  },
+
   nitro: {
     prerender: {
-      // Pre-render the homepage
+      crawlLinks: true,
       routes: ['/'],
-      // Then crawl all the links on the page
-      crawlLinks: true
+      // For CF trailing slash issue
+      autoSubfolderIndex: false
     }
   }
 })

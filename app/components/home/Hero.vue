@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import type { GitHubUser } from '~/type'
 
-const { data: user } = await useAsyncData('githubUser', () =>
-  $fetch<GitHubUser>('https://api.github.com/users/tuanductran')
-)
+const { data: user } = await useFetch<GitHubUser>('/api/github.json')
 </script>
 
 <template>

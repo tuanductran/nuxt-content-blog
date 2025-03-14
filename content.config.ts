@@ -10,7 +10,7 @@ export default defineContentConfig({
         description: z.string(),
         published: z.date(),
         slug: z.string(),
-        cover: z.string()
+        cover: z.string().optional()
       })
     }),
     bookmarks: defineCollection({
@@ -28,7 +28,7 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         slug: z.string(),
-        cover: z.string()
+        cover: z.string().optional()
       })
     }),
     projects: defineCollection({
