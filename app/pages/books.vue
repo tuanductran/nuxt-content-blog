@@ -4,6 +4,7 @@ import { getThumbnail } from '~/utils/getThumbnail'
 
 const description =
   'Khám phá bộ sưu tập sách được tuyển chọn kỹ lưỡng, giúp bạn mở rộng tri thức và tìm cảm hứng cho những trang sách tiếp theo. Từ những tác phẩm kinh điển đến hiện đại, hãy tìm cho mình một cuốn sách yêu thích.'
+
 useSeoMeta({
   title: 'Books | Tuan Duc Tran',
   description,
@@ -15,8 +16,25 @@ useSeoMeta({
 
 const pageSize = ref(10)
 const startCursor = ref<string | null>(null)
-const books = ref<NotionPage[]>([])
-const hasMore = ref(true)
+
+const { data, pending, error } = await useAsyncData('books', async () => {
+  const response = await $fetch<{
+    results: NotionPage[]
+    has_more: boolean
+    next_cursor: string | null
+  }>('/api/books', {
+    query: {
+      page_size: pageSize.value,
+      start_cursor: startCursor.value || undefined
+    }
+  })
+
+  return response
+})
+
+const books = ref(data.value?.results || [])
+const hasMore = ref(data.value?.has_more || false)
+const startCursor = ref(data.value?.next_cursor || null)
 const isLoading = ref(false)
 
 const toast = useToast()
@@ -27,7 +45,7 @@ const fetchBooks = async () => {
   isLoading.value = true
 
   try {
-    const data = await useFetch<{
+    const response = await $fetch<{
       results: NotionPage[]
       has_more: boolean
       next_cursor: string | null
@@ -36,12 +54,12 @@ const fetchBooks = async () => {
         page_size: pageSize.value,
         start_cursor: startCursor.value || undefined
       }
-    }).then(res => res.data.value)
+    })
 
-    if (data?.results) {
-      books.value.push(...data.results)
-      startCursor.value = data.next_cursor
-      hasMore.value = data.has_more
+    if (response?.results) {
+      books.value.push(...response.results)
+      startCursor.value = response.next_cursor
+      hasMore.value = response.has_more
     } else {
       hasMore.value = false
     }
@@ -53,14 +71,16 @@ const fetchBooks = async () => {
     isLoading.value = false
   }
 }
-
-onMounted(fetchBooks)
 </script>
 
 <template>
   <div>
     <AppHeader class="mb-8" title="Books" :description="description" />
-    <ul class="flex flex-col gap-4">
+    <div v-if="pending" class="text-center">Loading books...</div>
+    <div v-else-if="error" class="text-center">
+      Error loading books
+    </div>
+    <ul v-else class="flex flex-col gap-4">
       <li v-for="book in books" :key="book.id">
         <NuxtLink
           :to="book.public_url"
