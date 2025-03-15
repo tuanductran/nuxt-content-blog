@@ -48,7 +48,7 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
-    "@iconify-json/devicon": "^1.2.19",
+    "@iconify-json/devicon": "^1.2.20",
     "@iconify-json/solar": "^1.2.2",
     "@nuxt/content": "^3.3.0",
     "@nuxt/devtools": "^2.3.0",

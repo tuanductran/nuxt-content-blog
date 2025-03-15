@@ -31,8 +31,8 @@ importers:
         specifier: ^4.4.1
         version: 4.4.1(@vue/compiler-sfc@3.5.13)(prettier@3.5.3)
       '@iconify-json/devicon':
-        specifier: ^1.2.19
-        version: 1.2.19
+        specifier: ^1.2.20
+        version: 1.2.20
       '@iconify-json/solar':
         specifier: ^1.2.2
         version: 1.2.2
@@ -780,8 +780,8 @@ packages:
       '@vue/compiler-sfc':
         optional: true
 
-  '@iconify-json/devicon@1.2.19':
-    resolution: {integrity: sha512-OnVa/bfWB5K2ZeK/fD6VMwuP4PgfHX4jDFoXmHkBBJr13NmaFSpKcMdEXGpvl9u68u4HiMb3A/9PU4hDW6QXvA==}
+  '@iconify-json/devicon@1.2.20':
+    resolution: {integrity: sha512-aUJLqSQB1O1d5La/YXhZaKV10OrMgCpG954gIo2X34nqhZml+/MOj3ILrggb1EozDiheZq5ISUC0SD96+pTAZw==}
 
   '@iconify-json/solar@1.2.2':
     resolution: {integrity: sha512-lcTb6DWL4HZObiY1W3fHfuxxuQHUc6CFHFeywKEx7Ry0k+dU6POZCMC7oVLr0F8vuf+KgaQ3oOoGO/yFzOwrNg==}
@@ -6483,7 +6483,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@iconify-json/devicon@1.2.19':
+  '@iconify-json/devicon@1.2.20':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10282,7 +10282,7 @@ snapshots:
       micromark-util-resolve-all: 2.0.1
       micromark-util-subtokenize: 2.1.0
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-core-commonmark@2.0.3:
     dependencies:
@@ -10310,7 +10310,7 @@ snapshots:
       micromark-factory-whitespace: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
       parse-entities: 4.0.2
 
   micromark-extension-gfm-autolink-literal@2.1.0:
@@ -10318,18 +10318,18 @@ snapshots:
       micromark-util-character: 2.1.1
       micromark-util-sanitize-uri: 2.0.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-extension-gfm-footnote@2.1.0:
     dependencies:
       devlop: 1.1.0
-      micromark-core-commonmark: 2.0.2
+      micromark-core-commonmark: 2.0.3
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-normalize-identifier: 2.0.1
       micromark-util-sanitize-uri: 2.0.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-extension-gfm-strikethrough@2.1.0:
     dependencies:
@@ -10346,7 +10346,7 @@ snapshots:
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-extension-gfm-table@2.1.1:
     dependencies:
@@ -10387,7 +10387,7 @@ snapshots:
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-factory-destination@2.0.1:
     dependencies:
@@ -10489,7 +10489,7 @@ snapshots:
       debug: 4.4.0(supports-color@9.4.0)
       decode-named-character-reference: 1.1.0
       devlop: 1.1.0
-      micromark-core-commonmark: 2.0.2
+      micromark-core-commonmark: 2.0.3
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-chunked: 2.0.1
@@ -10501,7 +10501,7 @@ snapshots:
       micromark-util-sanitize-uri: 2.0.1
       micromark-util-subtokenize: 2.1.0
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
     transitivePeerDependencies:
       - supports-color
 
